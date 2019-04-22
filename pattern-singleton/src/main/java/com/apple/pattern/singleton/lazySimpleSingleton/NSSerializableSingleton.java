@@ -10,4 +10,8 @@ public class NSSerializableSingleton implements Serializable {
     public static NSSerializableSingleton getInstance() {
         return singleton;
     }
+
+    public Object readResolve() {
+        return singleton;
+    }
 }
