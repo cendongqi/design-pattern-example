@@ -27,7 +27,7 @@
     <modules>
         <module>pattern-proxy</module>
         <module>pattern-singleton</module>
-        <module>pattern-simple-factory</module>
+        <module>pattern-factory</module>
     </modules>
     
 </project>
