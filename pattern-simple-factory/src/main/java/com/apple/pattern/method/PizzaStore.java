@@ -20,8 +20,19 @@ import com.apple.pattern.method.product.Pizza;
  *      1.不想知道具体类，只需要知道具体工厂
  *      2.创建对象交给子类实现，更容易扩展
  *      3.动态指定某个工厂类
+ *
+ * 总结：
+ *      1.工厂方法符合"开闭原则"
+ *      2.产品实例化延伸到子类进行
+ *      3.创建者不需要知道实际创建的产品，只管拿来用就行了，交给工厂方法，工厂方法再交给子类创建
+ *      4.
  */
 public abstract class PizzaStore {
+    /**
+     * 创建者
+     * @param type
+     * @return
+     */
     public Pizza orderPizza(String type) {
         Pizza pizza;
         pizza = createPizza(type);
@@ -30,13 +41,17 @@ public abstract class PizzaStore {
     }
 
     /**
-     * 由子类决定如何创建披萨
+     * 工厂方法：由子类决定具体创建哪种披萨
      *
      * @param type
      * @return
      */
     protected abstract Pizza createPizza(String type);
 
+    /**
+     * 调用者
+     * @param args
+     */
     public static void main(String[] args) {
         System.out.println("---------Joel 需要的芝加哥的深盘披萨---------");
         ChicagoPizzaStore chicagoPizzaStore = new ChicagoPizzaStore();       //建立芝加哥的披萨店
