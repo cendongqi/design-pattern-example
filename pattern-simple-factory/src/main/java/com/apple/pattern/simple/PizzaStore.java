@@ -11,7 +11,7 @@ public class PizzaStore {
     }
 
     public Pizza orderPizza(String type) {
-        Pizza pizza = factory.create(type);
+        Pizza pizza = factory.createPizza(type);
         return pizza.prepare().bake().cut().box();
     }
 }

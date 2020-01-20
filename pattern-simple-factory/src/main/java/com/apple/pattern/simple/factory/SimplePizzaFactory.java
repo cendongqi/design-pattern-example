@@ -16,7 +16,7 @@ import com.apple.pattern.simple.product.*;
  *      2.只知道传入参数，不关心如何创建
  */
 public class SimplePizzaFactory {
-    public static Pizza create(String type) {
+    public static Pizza createPizza(String type) {
         Pizza pizza = null;
         if (type.equals("cheese")) {
             pizza = new CheesePizza();
